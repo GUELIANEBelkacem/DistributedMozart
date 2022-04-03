@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(a4356b7b-fcbb-4619-93bc-9138295a0c85), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /mnt/c/Users/moham/Desktop/PPC/PROJET/Projet_code-5/Projet_code/target/scala-2.11/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/moham/Desktop/PPC/PROJET/Projet_code-5/Projet_code/src/main/scala/Musicien.scala:46:42: not found: value Musicien[0m
+[0m[[0m[31merror[0m] [0m[0m                         val remote =   (Musicien)(context.actorSelection("akka.tcp://LeaderSystem" + n.id + "@" + n.ip + ":" + n.port))[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 5 s, completed Apr 2, 2022, 4:41:36 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
