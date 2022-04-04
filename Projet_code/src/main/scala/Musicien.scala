@@ -7,6 +7,8 @@ import akka.actor._
 import javax.sound.midi._
 import javax.sound.midi.ShortMessage._
 
+import scala.util.Random
+
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext
 import ExecutionContext.Implicits.global
@@ -18,11 +20,12 @@ import ExecutionContext.Implicits.global
 
 case class Start ()
 case class Update ()
-case class Ping(n:Int)
+case class Ping(n:Int, m:Int)
 case class Looper()
 case class IsLeader(chief:Int)
-case class Leader(chief:Int)
+case class Leader(chief:Int, age:Int)
 case class GetPlayer(who:Int)
+case class Counter()
 
 
 class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
@@ -33,7 +36,9 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
      val displayActor = context.actorOf(Props[DisplayActor], name = "displayActor")
      val managerActor = context.actorOf(Props(new Manager(id, terminaux)), name = "LM")
      val instrument = context.actorOf(Props[Piano], name = "piano")
-     
+     val db = context.actorOf (Props (new DataBaseActor()), "DataBaseActor") 
+     var count = 0
+     var partie = 0
      
      var isChief = false;
 
@@ -41,7 +46,7 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
      val TIME_BASE = 1000 milliseconds
      val LOOPER_TIME_BASE = 1800 milliseconds
      val scheduler = context.system.scheduler
-
+     val random = new Random
 
      var collegues:List[ActorSelection] = List()
      def receive = {
@@ -55,7 +60,7 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
                self ! Looper
           }
           case Measure(l) =>{
-               //instrument ! Measure(l)
+               instrument ! Measure(l)
                println("PLAYING!!!!!!!!!!!!!!!!!!!!")
           }
 
@@ -64,17 +69,17 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
                scheduler.scheduleOnce(TIME_BASE, self, Update)
           }
 
-          case Ping(n) =>{
+          case Ping(n, m) =>{
                //println("gotta ping from "+n)
-               managerActor ! Ping(n)
+               managerActor ! Ping(n, m)
           }
 
           case IsLeader(b) =>{
                isChief = (b==id)
           }
 
-          case Leader(n) => {
-               managerActor ! Leader(n)
+          case Leader(n, m) => {
+               managerActor ! Leader(n, m)
           }
           case Looper=>{
                println("am i chief: "+isChief )
@@ -84,9 +89,14 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
           case GetPlayer(m) =>{
             terminaux.foreach(n => {
                     if (n.id == m) {
+                         val remote = context.actorSelection("akka.tcp://MozartSystem" + n.id + "@" + n.ip + ":" + n.port + "/user/Musicien"+n.id)
+                         var r1 = random.nextInt(6)
+                         var r2 = random.nextInt(6)
+                         db ! (r1+r2, count, partie, remote)
+                         if(count == 7){partie = (partie +1) % 2}
+                         count = (count +1) % 8
                         
-                        val remote = context.actorSelection("akka.tcp://MozartSystem" + n.id + "@" + n.ip + ":" + n.port + "/user/Musicien"+n.id)
-                        remote ! Measure(List())
+                        //remote ! Measure(List())
                     }
                 
             })
@@ -150,12 +160,3 @@ object PlayerActor {
 
 }
 
-object DataBaseActor {
-	abstract class ObjetMusical
- 	case class Note (pitch:Int, dur:Int, vol:Int) extends ObjetMusical
- 	case class Chord (date:Int, notes:List[Note]) extends ObjetMusical
- 	case class Measure (chords:List[Chord]) extends ObjetMusical
- 
- 	case class GetMeasure (num:Int)
- 	//case class Start()
-}
