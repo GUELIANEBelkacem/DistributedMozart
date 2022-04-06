@@ -26,6 +26,9 @@ case class IsLeader(chief:Int)
 case class Leader(chief:Int, age:Int)
 case class GetPlayer(who:Int)
 case class Counter()
+case class Printer()
+case class Init()
+case class InitLooper()
 
 
 class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
@@ -40,10 +43,13 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
      var count = 0
      var partie = 0
      
-     var isChief = false;
+     var isChief = false
+
+     var ready = false
 
 
      val TIME_BASE = 1000 milliseconds
+     val INIT_TIME_BASE = 100 milliseconds
      val LOOPER_TIME_BASE = 1800 milliseconds
      val scheduler = context.system.scheduler
      val random = new Random
@@ -57,11 +63,22 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
                displayActor ! Message ("Musicien " + this.id + " is created")
                managerActor ! Start
                self ! Update
-               self ! Looper
+               //self ! Looper
+               self ! InitLooper
+          }
+          case InitLooper =>{
+               if(ready){
+                    displayActor ! Message ("LET'S PLAAAAAAAAAAAAAAAAY :-)")
+                   self ! Looper 
+               }
+               if(!ready){scheduler.scheduleOnce(INIT_TIME_BASE, self, InitLooper)}
+          }
+          case Init =>{
+               ready = true
           }
           case Measure(l) =>{
                instrument ! Measure(l)
-               println("PLAYING!!!!!!!!!!!!!!!!!!!!")
+               displayActor ! Message ("!!!!!!!!!!!!!!!!!!!!!!!!!PLAYIIIIIING!!!!!!!!!!!!!!!!!!!!!!!!!")
           }
 
           case Update =>{
@@ -70,7 +87,6 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
           }
 
           case Ping(n, m) =>{
-               //println("gotta ping from "+n)
                managerActor ! Ping(n, m)
           }
 
@@ -82,7 +98,7 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
                managerActor ! Leader(n, m)
           }
           case Looper=>{
-               println("am i chief: "+isChief )
+             
                if(isChief){ managerActor ! GetPlayer(id)}
                scheduler.scheduleOnce(LOOPER_TIME_BASE, self, Looper)
           }
@@ -114,7 +130,6 @@ class Piano () extends Actor{
 
   def receive = {
     case Measure (l) => {
-      //println("jouer ici une measure")
       for (c <- l) {
         c match{
           case Chord(e, lc) => 
@@ -139,7 +154,6 @@ object PlayerActor {
   val info = MidiSystem.getMidiDeviceInfo().filter(_.getName == "Gervill").headOption
   // or "SimpleSynth virtual input" or "Gervill"
      val device = info.map(MidiSystem.getMidiDevice).getOrElse {
-     println("[ERROR] Could not find Gervill synthesizer.")
      sys.exit(1)
      }
 

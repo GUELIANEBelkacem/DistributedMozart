@@ -75,3 +75,33 @@ AVERTISSEMENT: Unmatched cancel notification for request id 3438
 avr. 03, 2022 6:27:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 AVERTISSEMENT: Unmatched cancel notification for request id 4222
 2022.04.03 18:27:29 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+avr. 04, 2022 12:45:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 4250
+2022.04.04 12:47:39 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Projet.scala
+2022.04.04 12:52:06 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Projet.scala
+2022.04.04 12:58:12 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 12:59:56 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:00:13 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:02:22 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:08:20 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:10:42 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:14:59 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:17:09 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:22:10 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.04 13:22:31 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.06 14:07:34 INFO  shutting down Metals
+2022.04.06 14:07:35 ERROR Unexpected error initializing server
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request window/showMessageRequest failed with message: Canceled
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:209)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:193)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2022.04.06 14:09:28 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\.metals\lsp.trace.json or C:\Users\moham\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.04.06 14:09:30 INFO  logging to file C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\.metals\metals.log
