@@ -1,9 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(run 0, Some(093e4685-6f1c-4095-9691-bfe97f30fde6), Some(CommandSource(console0)))[0m
-[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
-[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /mnt/c/Users/moham/Desktop/PPC/PROJET/Projet_code-5/Projet_code/target/scala-2.11/classes ...[0m
-[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/moham/Desktop/PPC/PROJET/Projet_code-5/Projet_code/target/scala-2.11/classes/upmc/akka/leader/Counter.class (No such file or directory)[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
-[0m[[0m[31merror[0m] [0m[0mTotal time: 19 s, completed Apr 6, 2022, 6:14:16 PM[0m
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

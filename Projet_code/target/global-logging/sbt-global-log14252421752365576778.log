@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(run 0, Some(d0af8e07-100a-4d44-a28c-7d1601c7967a), Some(CommandSource(console0)))[0m
-[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
-[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /mnt/c/Users/moham/Desktop/PPC/PROJET/Projet_code-5/Projet_code/target/scala-2.11/classes ...[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were 10 feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

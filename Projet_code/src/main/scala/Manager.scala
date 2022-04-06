@@ -113,6 +113,23 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
                     }
                 
             })
+            if((count%3) == 0){
+                var s = "MUSICIENS: ["
+            
+                val tempList = activeCollegues ++ ListMap(id -> count)
+                
+                ListMap(tempList.toSeq.sortBy(_._1):_*)
+                
+                for( i <- 0 to 3){
+                if(tempList.contains(i)){s+="   "+i}
+                }
+            
+                s+="  ]" 
+                
+                
+                displayActor ! Message (s)
+                displayActor ! Message ("LEADER: ( "+chief+" )")
+            }
             this.activeCollegues = ListMap()
 
             
@@ -158,6 +175,7 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
             scheduler.scheduleOnce(COUNT_TIME_BASE, self, Counter)
         }
         case Printer =>{
+            /*
             var s = "MUSICIENS: ["
         
             val tempList = activeCollegues ++ ListMap(id -> count)
@@ -172,8 +190,11 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
               
             
             displayActor ! Message (s)
+
+            
             displayActor ! Message ("LEADER: ( "+chief+" )")
             scheduler.scheduleOnce(PRINTER_TIME_BASE, self, Printer)
+            */
         }
         
     }
