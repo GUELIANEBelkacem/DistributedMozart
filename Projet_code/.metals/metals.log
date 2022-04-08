@@ -169,3 +169,33 @@ avr. 06, 2022 9:44:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancella
 AVERTISSEMENT: Unmatched cancel notification for request id 10
 2022.04.06 21:44:53 INFO  time: code lens generation in 1.02s
 2022.04.06 21:44:54 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Musicien.scala
+2022.04.08 01:50:10 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\DataBaseActor.scala
+avr. 08, 2022 1:50:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 107
+avr. 08, 2022 1:50:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 106
+avr. 08, 2022 1:50:13 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 110
+2022.04.08 01:50:45 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Musicien.scala
+avr. 08, 2022 1:54:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 177
+2022.04.08 01:58:15 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 01:58:55 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 01:59:20 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:00:30 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:00:48 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Musicien.scala
+2022.04.08 02:01:07 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:02:17 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:02:23 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Musicien.scala
+avr. 08, 2022 2:05:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 410
+2022.04.08 02:07:42 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:07:42 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:10:06 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:10:17 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:11:31 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:12:06 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:20:46 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:24:10 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:30:52 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.08 02:39:27 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
