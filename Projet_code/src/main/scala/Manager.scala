@@ -15,9 +15,10 @@ import scala.collection.immutable.ListMap
 
 class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
     var activeCollegues:ListMap[Int,Int] = ListMap()
+    var tempActiveCollegues:ListMap[Int,Int] = ListMap()
     val displayActor = context.actorOf(Props[DisplayActor], name = "displayActor") 
     val TIME_BASE = 50 milliseconds 
-    val PRINT_TIME_BASE = 500 milliseconds
+    val PRINT_TIME_BASE = 400 milliseconds
     val PRINTER_TIME_BASE = 1500 milliseconds
     val COUNT_TIME_BASE = 100 milliseconds
     val INIT_TIME_BASE = 100 milliseconds
@@ -28,6 +29,7 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
     var chiefage = -1
     var count = 0
     var lcount = 0
+    var pcount = 0
     var killme = true
     def receive = {
 
@@ -113,7 +115,7 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
                     }
                 
             })
-            if((count%3) == 0){
+            if((pcount%3) == 0){
                 var s = "MUSICIENS: ["
             
                 val tempList = activeCollegues ++ ListMap(id -> count)
@@ -130,10 +132,11 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
                 displayActor ! Message (s)
                 displayActor ! Message ("LEADER: ( "+chief+" )")
             }
+            this.tempActiveCollegues = this.activeCollegues
             this.activeCollegues = ListMap()
 
             
-
+            pcount = pcount+1
             scheduler.scheduleOnce(PRINT_TIME_BASE, self, Looper)
         }
 
@@ -150,8 +153,8 @@ class Manager (val id:Int, val terminaux:List[Terminal]) extends Actor {
             //sender ! Leader(chief, chiefage)
         }
         case GetPlayer(n) =>{
-            val keys = activeCollegues.keys.toList
-            if(activeCollegues.size != 0){sender ! GetPlayer(keys(random.nextInt(activeCollegues.size)))}
+            val keys = tempActiveCollegues.keys.toList
+            if(tempActiveCollegues.size != 0){sender ! GetPlayer(keys(random.nextInt(tempActiveCollegues.size)))}
             
         }
 

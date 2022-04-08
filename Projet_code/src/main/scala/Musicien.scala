@@ -98,7 +98,7 @@ class Musicien (val id:Int, val terminaux:List[Terminal]) extends Actor {
                managerActor ! Leader(n, m)
           }
           case Looper=>{
-             
+            
                if(isChief){ managerActor ! GetPlayer(id)}
                scheduler.scheduleOnce(LOOPER_TIME_BASE, self, Looper)
           }

@@ -156,3 +156,16 @@ AVERTISSEMENT: Unmatched cancel notification for request id 2744
 2022.04.06 18:27:34 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
 2022.04.06 21:24:04 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\.metals\lsp.trace.json or C:\Users\moham\AppData\Local\scalameta\metals\cache\lsp.trace.json
 2022.04.06 21:24:08 INFO  logging to file C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\.metals\metals.log
+2022.04.06 21:24:08 INFO  Started: Metals version 0.11.2 in workspace 'C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code' for client Visual Studio Code 1.63.2.
+2022.04.06 21:24:08 INFO  Parse release: 11.0.12
+2022.04.06 21:24:17 INFO  time: initialize in 9.79s
+2022.04.06 21:24:23 WARN  Build server is not auto-connectable.
+2022.04.06 21:24:24 INFO  skipping build import with status 'Requested'
+2022.04.06 21:24:27 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala
+2022.04.06 21:24:45 INFO  no build target found for C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Manager.scala. Using presentation compiler with project's scala-library version: 3.1.1
+2022.04.06 21:25:00 INFO  time: code lens generation in 30s
+2022.04.06 21:44:50 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Musicien.scala
+avr. 06, 2022 9:44:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 10
+2022.04.06 21:44:53 INFO  time: code lens generation in 1.02s
+2022.04.06 21:44:54 WARN  no build target for: C:\Users\moham\Desktop\PPC\PROJET\Projet_code-5\Projet_code\src\main\scala\Musicien.scala
